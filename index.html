@@ -15,15 +15,16 @@
         <!-- password header  -->
         <div class="pwd-header">
             <h3>Make your password strong</h3>
+            <div class="field">
+        
+                <input type="number" name="number" minlength="8" maxlength="30" max="30"  min="8" value="15" placeholder="Length" title="Password Length" id="lengthOfPassword">
+            </div>
         </div>
         <!-- password controller  -->
         <div class="pwd-control">
-            <div class="field">
-                <input type="number" name="number" id="lengthOfPassword">
-                <label for="lengthOfPassword">Length of Password</label>
-            </div>
-            <div class="field">
-                <input type="checkbox" name="checkbox" id="symbol">
+           
+            <div class="field active">
+                <input type="checkbox" checked name="checkbox" id="symbol">
                 <label for="symbol">Symbols</label>
             </div>
             <div class="field">
@@ -42,10 +43,14 @@
         <!-- password body  -->
         <div class="pwd-body">
             <div class="display-pwd">
-                <input type="text" readonly id="password-field">
-                <span class="copyBtn">&#x2398;</span>
+                <input type="text" value="1saNad@31!!43(*&^%%" readonly id="password-field">
+                <span class="copyBtn" title="Copy Password">&#x2398;</span>
             </div>
-            <div class="generate-btn"><button>Generate</button></div>
+            
+        </div>
+        <!-- password footer  -->
+        <div class="pwd-footer">
+            <button class="generate-btn">Generate</button>
         </div>
     </div>
 

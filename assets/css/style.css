@@ -1,0 +1,162 @@
+/* ============ style sheet =============== */
+
+
+/* ========== variables ======== */
+:root {
+    --primary-color: #2D4263;
+    --secondary-color: #ffffff;
+    --light-color: #f8f8f8;
+    --text-dark: #1B1A17;
+
+}
+
+/*========= base ========== */
+*,
+*::after,
+*::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: poppins;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
+
+button {
+    cursor: pointer;
+}
+
+/* ========== common classes ========== */
+
+
+
+
+
+/*============ main style here =========== */
+
+.pwd-wrapper {
+    background: var(--secondary-color);
+    padding: 0.6rem;
+    width: min(100%, 500px);
+    position: relative;
+}
+
+.pwd-wrapper .pwd-header {
+    background-color: var(--light-color);
+    padding: 1rem;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pwd-header input {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    padding: .4rem;
+    font-size: 0.9rem;
+    font-family: poppins;
+    border: 1px solid transparent;
+    outline: none;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.089);
+}
+
+.pwd-header input::-webkit-outer-spin-button,
+.pwd-header input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.pwd-control {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem .3rem;
+    /* background-color: var(--light-color); */
+    margin-top: .4rem;
+
+}
+
+.pwd-control .field {
+    padding: .4rem 1rem;
+    background-color: var(--secondary-color);
+    border-radius: 40px;
+    margin: 0rem .3rem;
+    user-select: none;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.061);
+    cursor: pointer;
+}
+.pwd-control .field input{
+   display: none;    
+}
+.pwd-control .field.active {
+    background: var(--primary-color);
+    color: var(--light-color);
+}
+
+.pwd-control label {
+    font-size: .9rem;
+    cursor: pointer;
+}
+
+.pwd-body{
+    padding: 2rem 3rem;
+    text-align: center;
+    position: relative;
+    margin: 1rem 0rem;
+
+}
+.pwd-body .display-pwd{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.display-pwd{
+    /* background-color: var(--light-color); */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.061);
+    padding: 0.5rem 2rem;
+    position: relative;
+}
+.copyBtn{
+    font-size: 2rem;
+    user-select: none;
+    cursor: pointer;
+}
+.display-pwd input{
+    padding: .6rem;
+    width: 100%;
+    font-size: 1.2rem;
+    font-family: poppins;
+    letter-spacing: 2px;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+    outline: none;
+}
+.pwd-footer{
+    text-align: center;
+    padding: 1rem;
+    background: var(--light-color);
+}
+.pwd-footer button{
+    width: 50%;
+    padding: .8rem;
+    font-size: 1rem;
+    font-family: poppins;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: 1px solid transparent;
+    border-radius: 50px;
+}
