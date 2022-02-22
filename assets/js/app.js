@@ -1,8 +1,10 @@
 /* 
 TODO:
 - Select all of important elements.
+- Get all control buttons 
 - Create a function for Random Password .
-
+- Work with copy button function
+- Create Handle Error Function 
 */
 
 /* step 1 - select important elements  */
@@ -49,7 +51,17 @@ const randomPassword = () => {
 }
 generateBtn.addEventListener('click', randomPassword);
 
-/* 4. Handle Error  function */
+/* 4. work with copy button  */
+document.querySelector(".copyBtn").addEventListener('click', () => {
+    let getPasswordText = passwordField.value;
+    if (getPasswordText === '') {
+        handleError('Password not define!');
+    } else {
+        window.navigator.clipboard.writeText(getPasswordText);
+        passwordField.value = 'Copied Password.'
+    }
+})
+/* 5. Handle Error  function */
 function handleError(msg) {
     passwordField.value = msg;
     passwordField.classList.add('error');
