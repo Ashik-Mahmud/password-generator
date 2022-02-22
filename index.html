@@ -17,7 +17,7 @@
             <h3>Make your password strong</h3>
             <div class="field">
         
-                <input type="number" name="number" minlength="8" maxlength="30" max="30"  min="8" value="15" placeholder="Length" title="Password Length" id="lengthOfPassword">
+                <input type="text"  name="number"   value="15" placeholder="Length" title="Password Length" id="lengthOfPassword" maxlength="2">
             </div>
         </div>
         <!-- password controller  -->
@@ -43,14 +43,14 @@
         <!-- password body  -->
         <div class="pwd-body">
             <div class="display-pwd">
-                <input type="text" value="1saNad@31!!43(*&^%%#34342433" readonly id="password-field">
+                <input type="text" value="1saNad@31!!43(*&^%%#n/34342433" readonly id="password-field">
                 <span class="copyBtn" title="Copy Password">&#x2398;</span>
             </div>
             
         </div>
         <!-- password footer  -->
         <div class="pwd-footer">
-            <button class="generate-btn">Generate</button>
+            <button id="generate-btn">Generate</button>
         </div>
     </div>
 

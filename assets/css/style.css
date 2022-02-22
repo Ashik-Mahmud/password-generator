@@ -36,8 +36,11 @@ button {
 /* ========== common classes ========== */
 
 
-
-
+.error {
+    font-size: 1rem !important;
+    color: #ff0000;
+    letter-spacing: 0px !important;
+}
 
 /*============ main style here =========== */
 
@@ -98,9 +101,11 @@ button {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.061);
     cursor: pointer;
 }
-.pwd-control .field input{
-   display: none;    
+
+.pwd-control .field input {
+    display: none;
 }
+
 .pwd-control .field.active {
     background: var(--primary-color);
     color: var(--light-color);
@@ -111,30 +116,34 @@ button {
     cursor: pointer;
 }
 
-.pwd-body{
+.pwd-body {
     padding: 1rem 2rem;
     text-align: center;
     position: relative;
     margin: 1rem 0rem;
 
 }
-.pwd-body .display-pwd{
+
+.pwd-body .display-pwd {
     display: flex;
     align-items: center;
     position: relative;
 }
-.display-pwd{
+
+.display-pwd {
     /* background-color: var(--light-color); */
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.061);
     padding: 0.5rem 1rem;
     position: relative;
 }
-.copyBtn{
+
+.copyBtn {
     font-size: 2rem;
     user-select: none;
     cursor: pointer;
 }
-.display-pwd input{
+
+.display-pwd input {
     padding: .6rem;
     width: 100%;
     font-size: 1.2rem;
@@ -145,12 +154,14 @@ button {
     border: 1px solid transparent;
     outline: none;
 }
-.pwd-footer{
+
+.pwd-footer {
     text-align: center;
     padding: 1rem;
     background: var(--light-color);
 }
-.pwd-footer button{
+
+.pwd-footer button {
     width: 50%;
     padding: .8rem;
     font-size: 1rem;
