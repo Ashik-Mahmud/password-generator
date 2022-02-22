@@ -102,9 +102,7 @@ button {
     cursor: pointer;
 }
 
-.pwd-control .field input {
-    display: none;
-}
+
 
 .pwd-control .field.active {
     background: var(--primary-color);

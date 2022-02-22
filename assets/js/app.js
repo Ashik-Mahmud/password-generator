@@ -9,39 +9,48 @@ TODO:
 const passwordField = document.getElementById("password-field");
 const generateBtn = document.getElementById("generate-btn");
 const lengthField = document.getElementById("lengthOfPassword");
-const allButtons = document.getElementsByClassName("field");
+const allButtons = document.querySelectorAll(".pwd-control .field");
+let mixes = [];
 
-/* step 2 - create a function for random password  */
+/* step 2 - get all control buttons */
+allButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        button.classList.contains('active') ? button.classList.remove('active') : button.classList.add('active');
+        const activeButtons = document.querySelectorAll('.pwd-control .field.active');
+        let newStrings = '';
+        activeButtons.forEach(activeBtn => {
+            let activeBtnAttr = activeBtn.getAttribute('data-control');
+            newStrings = newStrings + activeBtnAttr;
+        })
+        mixes = newStrings.split('');
+    })
+})
+
+/* step 3 - create a function for random password  */
 
 const randomPassword = () => {
     passwordField.value = '';
-    const lowerAlp = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-    const upperAlp = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-    const symbols = `/\()"'-.,:;<>~!@#$%^&*|+=[]{}~?│`.split('');
-    const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     const lengthPassword = parseInt(lengthField.value);
-
-    let mixes = lowerAlp.concat(upperAlp, symbols, numbers);
-    for (let i = 0; i < mixes.length; i++) {
-        let rand = Math.round(Math.random() * (mixes.length - 1));
-        if (lengthPassword > 30 || lengthPassword < 8) {
-            passwordField.value = `Password characters will be 8 to 30`;
-            passwordField.classList.add('error');
-        } else {
-            if (i < lengthPassword) {
-                passwordField.value += mixes[rand];
-                passwordField.classList.remove('error');
+    if (mixes.length == 0) {
+        handleError(`Select Password Type`);
+    } else {
+        for (let i = 0; i < mixes.length; i++) {
+            let rand = Math.round(Math.random() * (mixes.length - 1));
+            if (lengthPassword > 25 || lengthPassword < 8) {
+                handleError(`Password characters will be 8 to 25`)
+            } else {
+                if (i < lengthPassword) {
+                    passwordField.value += mixes[rand];
+                    passwordField.classList.remove('error');
+                }
             }
         }
-
     }
-
-
-
-
-
-
 }
-randomPassword();
-
 generateBtn.addEventListener('click', randomPassword);
+
+/* 4. Handle Error  function */
+function handleError(msg) {
+    passwordField.value = msg;
+    passwordField.classList.add('error');
+}

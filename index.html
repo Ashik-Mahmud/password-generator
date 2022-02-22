@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,45 +9,43 @@
     <!-- link for custom css  -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-    
+
 
     <div class="pwd-wrapper">
         <!-- password header  -->
         <div class="pwd-header">
             <h3>Make your password strong</h3>
             <div class="field">
-        
-                <input type="text"  name="number"   value="15" placeholder="Length" title="Password Length" id="lengthOfPassword" maxlength="2">
+
+                <input type="text" name="number" value="15" placeholder="Length" title="Password Length"
+                    id="lengthOfPassword" maxlength="2">
             </div>
         </div>
         <!-- password controller  -->
         <div class="pwd-control">
-           
-            <div class="field active">
-                <input type="checkbox" checked name="checkbox" id="symbol">
+
+            <div data-control='/\()"-.,:;<>~!@#$%^&*|+=[]{}~?│' class="field">
                 <label for="symbol">Symbols</label>
             </div>
-            <div class="field">
-                <input type="checkbox" name="checkbox" id="upperCase">
+            <div data-control="ABCDEFGHIJKLMNOPQRSTUVWXYZ" class="field">
                 <label for="upperCase">UpperCase</label>
             </div>
-            <div class="field">
-                <input type="checkbox" name="checkbox" id="lowerCase">
+            <div data-control="abcdefghijklmnopqrstuvwxyz" class="field">
                 <label for="lowerCase">LowerCase</label>
             </div>
-            <div class="field">
-                <input type="checkbox" name="checkbox" id="numbers">
+            <div data-control="0123456789" class="field">
                 <label for="numbers">Numbers</label>
             </div>
         </div>
         <!-- password body  -->
         <div class="pwd-body">
             <div class="display-pwd">
-                <input type="text" value="1saNad@31!!43(*&^%%#n/34342433" readonly id="password-field">
+                <input type="text" value="Select Password Type" readonly id="password-field">
                 <span class="copyBtn" title="Copy Password">&#x2398;</span>
             </div>
-            
+
         </div>
         <!-- password footer  -->
         <div class="pwd-footer">
@@ -58,4 +57,5 @@
     <!-- script for app.js  -->
     <script src="./assets/js/app.js"></script>
 </body>
+
 </html>
